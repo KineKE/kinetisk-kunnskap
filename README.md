@@ -126,5 +126,7 @@ Ian Sommerville, *Software Engineering, 10. utgave*
      - Code repository, commit, pull request
      - Kvalitetssikring (quality assurance) vs kvalitetskontroll (quality control)
 
+---
+
 🎉 Lykke til med eksamen! Husk, øvelse gjør mester! 🚀📖  
 Hvis du finner feil i quizzen, gi meg gjerne beskjed!
