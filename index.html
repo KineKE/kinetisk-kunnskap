@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Character encoding -->
     <meta charset="UTF-8">
@@ -11,17 +10,48 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
 </head>
-
 <body>
+
     <!-- HEADER START -->
     <header>
-
+        <nav>
+            <div class="logo">QuizMaster</div>
+            <ul>
+                <li><button>Hjem</button></li>
+                <li><button>Start Quiz</button></li>
+                <li><button>Toppliste</button></li>
+            </ul>
+        </nav>
     </header>
     <!-- HEADER END -->
 
-    <main>
+    <main id="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>DAFE2200 QUIZ</h1>
+                <p>Here is some generic text welcoming you to the site.</p>
+                <button class="start-quiz-btn">Start ny quiz</button>
+            </div>
+        </section>
+
+        <!-- Quiz Container -->
+        <section id="quiz-container" class="hidden">
+            <div id="progress">
+                Question <span id="current-question">1</span> of <span id="total-questions">3</span>
+            </div>
+            <h2 id="question-title">Question Title</h2>
+            <div id="options">
+                <!-- Answer options will be dynamically injected -->
+            </div>
+            <div id="feedback" class="hidden"></div>
+            <button id="next-button" class="hidden">Next</button>
+        </section>
 
     </main>
-
+    <footer>
+        <p>&copy; 2024 DAFE2200 Quiz</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
