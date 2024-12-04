@@ -14,12 +14,11 @@
 
     <!-- HEADER START -->
     <header>
+        <a href="index.html"><img src="images/logo_transparent.png" class="logo" alt=""/></a>
         <nav>
-            <div class="logo">QuizMaster</div>
             <ul>
                 <li><button>Hjem</button></li>
-                <li><button>Start Quiz</button></li>
-                <li><button>Toppliste</button></li>
+                <li><button>Tilbakemelding</button></li>
             </ul>
         </nav>
     </header>
@@ -30,28 +29,83 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>DAFE2200 QUIZ</h1>
-                <p>Here is some generic text welcoming you to the site.</p>
-                <button class="start-quiz-btn">Start ny quiz</button>
+                <p>Velkommen til quiz for DAFE2200 - Systemutvikling.</p>
+
+                <!-- Topics Container -->
+                <section id="topics-container">
+                    <div class="topics-header">
+                        <h2>Velg emner</h2>
+                    </div>
+                    <form id="topic-form">
+                        <label>
+                            <input type="checkbox" name="topics" value="core_concepts.json">
+                            Grunnleggende begreper
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="development_process.json">
+                            Utviklingsprosesser
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="uml_modeling.json">
+                            UML og modellering
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="design_testing.json">
+                            Design og testing
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="project_management.json">
+                            Prosjektledelse og teamarbeid
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="service_maintenance.json">
+                            Tjenesteorientert programvare og vedlikehold
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topics" value="config_quality.json">
+                            Konfigurasjon og kvalitetsstyring
+                        </label>
+                    </form>
+                    <div>
+                        <button type="button" id="start-quiz-btn" class="start-quiz-btn">Start Quiz</button>
+                    </div>
             </div>
         </section>
+
+
+
 
         <!-- Quiz Container -->
         <section id="quiz-container" class="hidden">
             <div id="progress">
-                Question <span id="current-question">1</span> of <span id="total-questions">3</span>
+                Spørsmål <span id="current-question">1</span> of <span id="total-questions">3</span>
             </div>
-            <h2 id="question-title">Question Title</h2>
-            <div id="options">
+            <div id="question-container">
+                <h2 id="question-title">Question Title</h2>
+            </div>
+            <div id="options" class="button-container">
                 <!-- Answer options will be dynamically injected -->
             </div>
             <div id="feedback" class="hidden"></div>
-            <button id="next-button" class="hidden">Next</button>
+            <button id="next-button" class="hidden">Neste</button>
+        </section>
+
+        <!-- End Screen Container -->
+        <section id="end-container" class="hidden">
+            <div id="end-screen" class="end-screen">
+                <h1>Quiz ferdig!</h1>
+                <p>Din score: <span id="final-score"></span> / <span id="total-questions-end"></span></p>
+                <button id="restart-quiz-btn" class="start-quiz-btn">Restart Quiz</button>
+            </div>
         </section>
 
     </main>
+
     <footer>
         <p>&copy; 2024 DAFE2200 Quiz</p>
     </footer>
+
     <script src="script.js"></script>
+
 </body>
 </html>
