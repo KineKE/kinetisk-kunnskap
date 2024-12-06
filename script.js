@@ -7,36 +7,6 @@ let score = 0; // Tracks the user's current score
 // Utility Functions
 // =========================
 
-
-// =========================
-// Quiz Initialization
-// =========================
-
-
-// =========================
-// Question Display
-// =========================
-
-
-// =========================
-// Answer Checking
-// =========================
-
-
-// =========================
-// Navigation Between Questions
-// =========================
-
-
-// =========================
-// End of Quiz
-// =========================
-
-
-// =========================
-// Debugging and Testing
-// =========================
-
 // Function to fetch questions from a JSON file
 async function fetchQuestions() {
     try {
@@ -52,19 +22,7 @@ async function fetchQuestions() {
     }
 }
 
-document.getElementById("start-quiz-btn").addEventListener("click", () => {
-    const selectedTopics = Array.from(
-        document.querySelectorAll("input[name='topics']:checked")
-    ).map((checkbox) => checkbox.value);
-
-    if (selectedTopics.length === 0) {
-        alert("Vennligst velg minst ett emne!");
-        return;
-    }
-
-    loadQuestionsFromTopics(selectedTopics);
-});
-
+// Fetch questions based on selected topics
 async function loadQuestionsFromTopics(topics) {
     questions = []; // Clear any existing questions
 
@@ -84,14 +42,44 @@ async function loadQuestionsFromTopics(topics) {
             return;
         }
 
-        // Start the quiz
-        document.getElementById("topics-container").classList.add("hidden");
-        showQuestion();
     } catch (error) {
         console.error("Error loading questions:", error);
         alert("Det oppsto en feil under lasting av spørsmålene.");
     }
 }
+
+
+// =========================
+// Quiz Initialization
+// =========================
+
+
+document.querySelector(".start-quiz-btn").addEventListener("click", () => {
+    console.log("Start button clicked!"); // Check if this logs in the console
+    showQuestion();
+});
+
+
+function restartQuiz() {
+    // Reset the quiz state
+    currentQuestionIndex = 0;
+    score = 0;
+
+    // Hide the end screen and show the hero content
+    const endContainer = document.getElementById("end-container");
+    endContainer.classList.add("hidden");
+
+    const heroContent = document.querySelector(".hero-content");
+    heroContent.classList.remove("hidden");
+
+    // Reset and start the quiz
+    showQuestion();
+}
+
+
+// =========================
+// Question Display
+// =========================
 
 function showQuestion() {
     if (questions.length === 0) {
@@ -123,54 +111,9 @@ function showQuestion() {
     });
 }
 
-
-/*function showQuestion() {
-    console.log("showQuestion function called");
-
-
-    // Hide the start screen (hero section)
-    const heroSection = document.querySelector(".hero-content");
-    heroSection.classList.add("hidden");
-
-    // Show the quiz container
-    const questionContainer = document.getElementById("quiz-container");
-    questionContainer.classList.remove("hidden");
-
-
-    const questionTitle = document.getElementById("question-title");
-    const optionsContainer = document.getElementById("options");
-
-    // Clear any previous options
-    optionsContainer.innerHTML = "";
-
-    // Get the current question
-    const currentQuestion = questions[currentQuestionIndex];
-    questionTitle.textContent = currentQuestion.question;
-
-
-    document.getElementById("question-title").textContent = currentQuestion.question;
-    document.getElementById("current-question").textContent = currentQuestionIndex + 1;
-    document.getElementById("total-questions").textContent = questions.length;
-
-
-    // Create buttons for each option
-    currentQuestion.options.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.classList.add("btn");
-        button.addEventListener("click", () => checkAnswer(index)); // Attach click event
-        optionsContainer.appendChild(button);
-    });
-}*/
-
-
-
-
-document.querySelector(".start-quiz-btn").addEventListener("click", () => {
-    console.log("Start button clicked!"); // Check if this logs in the console
-    showQuestion();
-});
-
+// =========================
+// Answer Checking
+// =========================
 
 function checkAnswer(selectedOptionIndex) {
     const currentQuestion = questions[currentQuestionIndex];
@@ -223,25 +166,16 @@ function checkAnswer(selectedOptionIndex) {
     nextButton.classList.remove("hidden");
 }
 
-document.getElementById("next-button").addEventListener("click", () => {
-    const feedback = document.getElementById("feedback");
-    feedback.style.display = "none"; // Hide feedback
 
-    // Enable all buttons for the next question
-    const buttons = document.querySelectorAll("#options .btn");
-    buttons.forEach((button) => {
-        button.disabled = false; // Re-enable button
-        button.classList.remove("disabled", "correct-highlight", "incorrect-highlight"); // Remove styles
-    });
 
-    // Move to the next question
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        endQuiz();
-    }
-});
+// =========================
+// Navigation Between Questions
+// =========================
+
+
+// =========================
+// End of Quiz
+// =========================
 
 function endQuiz() {
     const questionContainer = document.getElementById("quiz-container");
@@ -262,24 +196,9 @@ function endQuiz() {
     restartButton.addEventListener("click", restartQuiz);
 }
 
-function restartQuiz() {
-    // Reset the quiz state
-    currentQuestionIndex = 0;
-    score = 0;
-
-    // Hide the end screen and show the hero content
-    const endContainer = document.getElementById("end-container");
-    endContainer.classList.add("hidden");
-
-    const heroContent = document.querySelector(".hero-content");
-    heroContent.classList.remove("hidden");
-
-    // Reset and start the quiz
-    showQuestion();
-}
-
-
-
+// =========================
+// Event Listeners
+// =========================
 
 document.getElementById("start-quiz-btn").addEventListener("click", () => {
     // Get selected topics
@@ -297,34 +216,34 @@ document.getElementById("start-quiz-btn").addEventListener("click", () => {
     loadQuestionsFromTopics(selectedTopics);
 });
 
-async function loadQuestionsFromTopics(topics) {
-    questions = []; // Clear any existing questions
 
-    try {
-        for (const topic of topics) {
-            const response = await fetch(`questions/${topic}`);
-            if (!response.ok) {
-                throw new Error(`Could not fetch questions from ${topic}`);
-            }
-            const topicQuestions = await response.json();
-            questions = questions.concat(topicQuestions); // Merge questions
-        }
 
-        console.log("Questions loaded:", questions); // Debugging
-        if (questions.length === 0) {
-            alert("Ingen spørsmål funnet for de valgte emnene.");
-            return;
-        }
 
-        // Start the quiz
-        document.querySelector(".hero-content").classList.add("hidden");
-        document.getElementById("quiz-container").classList.remove("hidden");
+document.getElementById("next-button").addEventListener("click", () => {
+    const feedback = document.getElementById("feedback");
+    feedback.style.display = "none"; // Hide feedback
+
+    // Enable all buttons for the next question
+    const buttons = document.querySelectorAll("#options .btn");
+    buttons.forEach((button) => {
+        button.disabled = false; // Re-enable button
+        button.classList.remove("disabled", "correct-highlight", "incorrect-highlight"); // Remove styles
+    });
+
+    // Move to the next question
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
-    } catch (error) {
-        console.error("Error loading questions:", error);
-        alert("Det oppsto en feil under lasting av spørsmålene.");
+    } else {
+        endQuiz();
     }
-}
+});
+
+
+
+// =========================
+// Debugging and Testing
+// =========================
 
 
 

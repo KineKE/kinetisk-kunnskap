@@ -113,6 +113,7 @@ header {
 /* Reduce gap between logo and other elements */
 nav {
     margin-top: 0; /* Removes margin between the logo and the navigation bar */
+    padding-right: 50px;
 }
 
 header ul {
@@ -127,30 +128,121 @@ header ul li a {
     padding: 8px 15px;
     transition: background 0.3s;
     flex-grow: 1; /* Make each list item take an equal portion of space */
-
 }
+
 
 header ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
 
-header ul li button {
+/*header ul li button {
     background: transparent;
     border: 1px solid white;
-    width: 100%; /* Ensure buttons take up the full width of their container */
+    width: 100%; !* Ensure buttons take up the full width of their container *!
     color: white;
     padding: 8px 15px;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
-}
+}*/
 
-header ul li button:hover {
+/*header ul li button {
+    background-color: rgba(245, 211, 220, 0.9); !* Light pastel pink *!
+    color: #333; !* Neutral text color *!
+    border: 2px solid rgba(245, 115, 179, 0.6); !* Subtle pink border *!
+    padding: 10px 20px; !* Add padding for button size *!
+    border-radius: 12px; !* Rounded corners for consistency *!
+    font-size: 1rem; !* Match the font size of other buttons *!
+    cursor: pointer; !* Pointer cursor for interactivity *!
+    transition: all 0.2s ease-in-out; !* Smooth hover transitions *!
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* Subtle shadow for depth *!
+}*/
+
+
+/*header ul li button:hover {
     background: white;
     color: black;
     border-color: white;
+}*/
+
+
+
+/*header ul li button:hover {
+    background-color: rgba(245, 115, 179, 0.8); !* Darker pink on hover *!
+    color: #fff; !* White text for contrast *!
+    transform: scale(1.05); !* Slight zoom effect *!
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); !* Enhanced shadow on hover *!
+}*/
+
+/*header ul li button {
+    background: linear-gradient(
+            135deg,
+            rgba(245, 211, 220, 0.2) 0%,
+            rgba(255, 255, 255, 0.1) 100%
+    ); !* Gradient for extra depth *!
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}*/
+
+/*header ul li button {
+    background: rgba(245, 211, 220, 0.2); !* Transparent pastel pink *!
+    border: 1px solid rgba(255, 255, 255, 0.4); !* Soft white border *!
+    color: white; !* Text color matching a frosted glass effect *!
+    padding: 10px 20px; !* Button size *!
+    border-radius: 12px; !* Rounded corners *!
+    font-size: 1rem; !* Font size for readability *!
+    backdrop-filter: blur(8px); !* Frosted glass effect *!
+    -webkit-backdrop-filter: blur(8px); !* Safari compatibility *!
+    cursor: pointer; !* Interactive cursor *!
+    transition: all 0.3s ease; !* Smooth transitions *!
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); !* Subtle shadow for depth *!
+}*/
+/*
+header ul li button:hover {
+    background: rgba(245, 211, 220, 0.4); !* Slightly darker pink on hover *!
+    color: #fff; !* Ensure text is visible on hover *!
+    transform: scale(1.05); !* Slight zoom effect on hover *!
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); !* Enhanced shadow for hover *!
+}*/
+
+/*header ul li button:hover {
+    background: linear-gradient(
+            135deg,
+            rgba(245, 211, 220, 0.4) 0%,
+            rgba(255, 255, 255, 0.2) 100%
+    );
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}*/
+
+header ul li button {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: rgba(255, 255, 255, 0.7); /* Subtle white text */
+    font-size: 1rem; /* Maintain readability */
+    font-weight: 500; /* Slightly bold for emphasis */
+    padding: 0; /* Remove padding to look less button-like */
+    text-transform: uppercase; /* Optional: Make text stand out */
+    letter-spacing: 0.05em; /* Subtle spacing for elegance */
+    cursor: pointer; /* Still indicate interactivity */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+header ul li button:hover {
+    color: rgba(245, 211, 220, 1); /* Bright pastel pink on hover */
+    transform: scale(1.1); /* Subtle zoom effect */
+    text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5); /* Glow-like effect */
 }
 
 header nav {
