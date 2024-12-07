@@ -30,8 +30,8 @@
             <div class="hero-content">
                 <h1>DAFE2200 QUIZ</h1>
                 <p>Velkommen til quiz for DAFE2200 - Systemutvikling.</p>
-
-                <!-- Topics Container -->
+<!--
+                &lt;!&ndash; Topics Container &ndash;&gt;
                 <section id="topics-container">
                     <div class="topics-header">
                         <h2>Velg emner</h2>
@@ -65,8 +65,10 @@
                             <input type="checkbox" name="topics" value="config_quality.json">
                             Konfigurasjon og kvalitetsstyring
                         </label>
-                    </form>
+                    </form>-->
                     <div>
+                        <button id="start-flashcards-btn" class="start-quiz-btn">Start Flashcards</button>
+
                         <button type="button" id="start-quiz-btn" class="start-quiz-btn">Start Quiz</button>
                     </div>
             </div>
@@ -89,6 +91,20 @@
             <div id="feedback" class="hidden"></div>
             <button id="next-button" class="hidden">Neste</button>
         </section>
+
+        <div id="flashcard-container" class="hidden">
+            <div id="flashcard" class="flashcard">
+                <div id="flashcard-front" class="flashcard-side">Question/Term</div>
+                <div id="flashcard-back" class="flashcard-side hidden">Answer/Definition</div>
+            </div>
+            <div class="flashcard-buttons">
+                <button id="prev-flashcard" class="btn">Previous</button>
+                <button id="flip-flashcard" class="btn">Flip</button>
+                <button id="next-flashcard" class="btn">Next</button>
+            </div>
+            <button id="back-to-menu" class="btn">Back to Menu</button>
+        </div>
+
 
         <!-- End Screen Container -->
         <section id="end-container" class="hidden">

@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is JavaScript?",
+    "answer": "A programming language used for web development."
+  },
+  {
+    "question": "What is HTML?",
+    "answer": "The standard markup language for creating web pages."
+  }
+]

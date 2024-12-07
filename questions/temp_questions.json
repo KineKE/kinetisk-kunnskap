@@ -1,0 +1,12 @@
+[
+  {
+    "question": "Config 1",
+    "options": ["Great", "Fine", "Outstanding", "Whatever"],
+    "answer": "1"
+  },
+  {
+    "question": "Config 2",
+    "options": ["OK", "If you say so", "Gotcha", "Excellent"],
+    "answer": "2"
+  }
+]
