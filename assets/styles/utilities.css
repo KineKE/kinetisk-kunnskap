@@ -1,0 +1,45 @@
+/* ============================================
+   UTILITIES
+   Contains reusable utility classes and global variables,
+   such as CSS variables, spacing, visibility helpers,
+   and flexbox utilities.
+   ============================================ */
+
+
+/* ============================================
+   HELPER CLASSES
+   ============================================ */
+
+.hidden {
+    display: none;
+}
+
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes gradient-shift {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0; /* Invisible at the start */
+        transform: translateY(-20px); /* Slide up */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* No vertical offset */
+    }
+}

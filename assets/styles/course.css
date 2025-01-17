@@ -1,0 +1,66 @@
+/* ============================================
+   COURSE PAGE
+   Base styles for the course.html page, including
+   shared styles for containers, quizzes, and other
+   course-related elements.
+   ============================================ */
+
+
+input[type="checkbox"] {
+    accent-color: #dca7c2; /* Replace with your preferred color */
+}
+
+
+.start-quiz-btn {
+    display: inline-block;
+    padding: 15px 30px; /* Adds size to the button */
+    font-size: 18px; /* Makes text more readable */
+    font-weight: bold; /* Makes text stand out */
+    color: #000; /* Black text for contrast */
+    background-color: #fce2ff; /* White background */
+    border: 2px solid rgba(245, 115, 179, 0.6); /* Pink border for emphasis */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    text-decoration: none; /* Removes underline for links */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: all 0.1s ease-in-out; /* Smooth animations */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+}
+
+/* Hover Effect */
+.start-quiz-btn:hover {
+    background-color: #ff69b4; /* Pink background on hover */
+    color: #fff; /* White text on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Increased depth */
+}
+
+
+#end-container {
+    position: absolute; /* Overlay on top of the hero */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    width: 90%; /* Responsive width */
+    background-color: rgba(255, 228, 235, 0.9); /* Soft pink */
+    padding: 30px;
+    color: black;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 10; /* Ensure it's above the hero */
+}
+
+#flashcard-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    top: 0;
+    left: 0;
+    position: absolute;
+}

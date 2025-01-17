@@ -1,0 +1,69 @@
+/* ============================================
+   BASE
+
+    - Resets: Browser normalization (e.g., html, body, ul styles).
+    - Root Variables: Colors, font families, and spacing variables.
+    - Global Elements: Basic styles for typography (h1, p), links (a), and input elements.
+   ============================================ */
+
+/* ============================================
+   RESETS
+   ============================================ */
+
+/* 1.1 Reset styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   ROOT VARIABLE
+   ============================================ */
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+:root {
+    --text-color: white;
+    --font-family: Arial, sans-serif;
+
+    /*
+    --font-family: 'Poppins', sans-serif;
+     */
+}
+
+
+
+body {
+    height: 100%; /* Full height of the viewport */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack header, main and footer vertically */
+    font-family: Arial, sans-serif;
+    /*font-family: var(--font-family);*/
+    text-align: center;
+    overflow: hidden; /* Prevent scrolling */
+    box-sizing: border-box; /* Ensure padding and border are accounted for */
+    color: var(--text-color);
+}
+
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+

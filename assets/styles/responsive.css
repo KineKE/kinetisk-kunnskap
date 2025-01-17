@@ -1,0 +1,35 @@
+/* ============================================
+   RESPONSIVE DESIGN
+   Media queries for responsive design.
+   Adjusts styles for different screen sizes,
+   including mobile, tablet, and desktop breakpoints.
+   ============================================ */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-links a {
+        width: 100%; /* Full-width buttons */
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 200px; /* Reduce size on smaller screens */
+    }
+
+    .nav-bar {
+        flex-direction: column; /* Stack links vertically */
+        gap: var(--spacing-sm);
+    }
+
+    .nav-bar a {
+        width: 100%; /* Stretch links to fill the parent */
+        text-align: center;
+    }
+}

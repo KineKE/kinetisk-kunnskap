@@ -1,0 +1,318 @@
+/* ============================================
+   INDEX PAGE
+   Specific styles for the landing page (index.html),
+   including the hero section and other unique elements.
+   ============================================ */
+
+
+
+
+/* Year 1 (Purple) */
+#year-1 {
+    border-color: rgba(123, 67, 151, 0.9); /* Purple border for Year 1 */
+}
+
+
+/* Year 2 (Pink) */
+#year-2 {
+    border-color: rgba(232, 133, 224, 0.9); /* Pink border for Year 2 */
+}
+
+
+
+
+
+#year-2 .course-button {
+    background-color: rgba(160, 91, 200, 0.9); /* Refined purple for 2nd year buttons */
+}
+
+#year-2 .course-button:hover {
+    background-color: rgba(200, 133, 255, 0.8); /* Slightly lighter purple on hover */
+    color: white; /* Keep white text for readability */
+}
+
+
+#year-1 .course-button {
+    background-color: rgba(123, 67, 151, 0.9); /* Deep purple buttons for Year 1 */
+}
+
+#year-1 .course-button:hover {
+    background-color: rgba(160, 91, 200, 0.8); /* Lighter purple on hover */
+    color: white; /* Keep text white */
+}
+
+.year-label#year-1-label {
+    background-color: rgba(123, 67, 151, 0.9); /* Purple label for 1. år */
+}
+
+
+#year-2 .course-button {
+    background-color: rgba(232, 133, 224, 0.9); /* Pink buttons for Year 2 */
+}
+
+#year-2 .course-button:hover {
+    background-color: rgba(255, 160, 255, 0.8); /* Slightly lighter pink on hover */
+    color: white; /* Keep text white */
+}
+
+.year-label#year-2-label {
+    background-color: rgba(232, 133, 224, 0.9); /* Pink label for 2. år */
+}
+
+/* Year 2 Label (Pink) */
+.year-label#year-2-label {
+    background-color: rgba(232, 133, 224, 0.9); /* Pink label for 2. år */
+    border-color: rgba(232, 133, 224, 0.9); /* Matching pink border */
+}
+
+
+.year-label#year-1-label {
+    background-color: rgba(123, 67, 151, 0.9); /* Purple label for 1. år */
+    border-color: transparent; /* Remove the white border */
+}
+
+
+.year-label#year-1-label {
+    background-color: rgba(123, 67, 151, 0.9); /* Purple label for 1. år */
+    border-color: transparent; /* Remove the white border */
+}
+
+
+
+.year-group h2 {
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+.course-btn {
+    background-color: #f0a500;
+    color: #fff;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-btn:hover {
+    background-color: #ffcf70;
+    transform: translateY(-3px);
+}
+
+.content {
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+
+.year-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+
+.courses {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.course-button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#year-2 .course-button {
+    background-color: #1E90FF; /* Blue buttons for 2nd year */
+}
+
+.course-button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.content {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+
+.year-container {
+    margin: 20px 0;
+}
+
+
+.year-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.course-button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#year-2 .course-button {
+    background-color: #1E90FF;
+}
+
+.course-button:hover {
+    background-color: #333;
+    color: white;
+}
+
+.year-box button {
+    width: 120px;
+    height: 60px;
+}
+
+
+.content {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+
+.year-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 20px 0;
+    margin: 20px auto;
+    position: relative;
+    width: 80%;
+}
+
+.year-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    border: 2px solid white;
+}
+
+.courses {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.course-button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#year-2 .course-button {
+    background-color: #1E90FF;
+}
+
+.course-button:hover {
+    background-color: #333;
+    color: white;
+}
+
+
+.content {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+.year-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 20px 0;
+    margin: 40px auto; /* Increased margin for more space */
+    position: relative;
+    width: 80%;
+}
+
+.year-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(123, 67, 151, 0.9); /* Deep purple for label */
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    border: 2px solid white;
+}
+
+
+.courses {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.course-button {
+    background-color: rgba(123, 67, 151, 0.9); /* Purple buttons */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 1.2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#year-2 .course-button {
+    background-color: rgba(232, 133, 224, 0.9); /* Red buttons for 2nd year */
+}
+
+.course-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* White hover */
+    color: rgba(123, 67, 151, 1); /* Purple text */
+}

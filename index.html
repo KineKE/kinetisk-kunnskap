@@ -1,131 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Character encoding -->
-    <meta charset="UTF-8">
-    <!-- Configure the viewport for responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAFE2200 - MCQ Øving</title>
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon-32x32.png">
-</head>
-<body>
+    <head>
+        <!-- Character encoding -->
+        <meta charset="UTF-8">
+        <!-- Configure the viewport for responsive design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kinetisk kunnskap</title>
+        <link rel="stylesheet" href="assets/styles/base.css">
+        <link rel="stylesheet" href="assets/styles/utilities.css">
+        <link rel="stylesheet" href="assets/styles/layout.css">
+        <link rel="stylesheet" href="assets/styles/index.css">
+        <link rel="stylesheet" href="assets/styles/responsive.css">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/images/global/favicon-32x32.png">
+    </head>
+    <body>
 
-    <!-- HEADER START -->
-    <header>
-        <a href="index.html"><img src="assets/images/logo_transparent.png" class="logo" alt=""/></a>
-        <nav>
-            <ul>
-                <li><button>Hjem</button></li>
-                <li><button>Tilbakemelding</button></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- HEADER END -->
+        <!-- HEADER START -->
+        <header>
+            <a href="index.html">
+                <img src="assets/images/global/logo_transparent.png" class="logo" alt="Logo" />
+            </a>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="course.html?course=DATA2500">DATA2500</a></li>
+                    <li><a href="course.html?course=DATA2410">DATA2410</a></li>
+                    <li><a href="course.html?course=DAVE3606">DAVE3606</a></li>
+                    <li><a href="course.html?course=ADTS2310">ADTS2310</a></li>
+                    <li><a href="course.html?course=DATA1700">DATA1700</a></li>
+                    <li><a href="course.html?course=DATA1500">DATA1500</a></li>
+                    <li><a href="course.html?course=ADSE1310">ADSE1310</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- HEADER END -->
 
-    <main id="content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>DAFE2200 QUIZ</h1>
-                <p>Velkommen til quiz for DAFE2200 - Systemutvikling.</p>
-<!--
-                &lt;!&ndash; Topics Container &ndash;&gt;
-                <section id="topics-container">
-                    <div class="topics-header">
-                        <h2>Velg emner</h2>
+        <main id="content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div id="hero-container" class="hero-content">
+                    <h1>Velkommen til Kines Lærekrok</h1>
+
+                    <div class="year-box" id="year-1">
+                        <h2 class="year-label">1. år</h2>
+                        <div class="courses">
+                            <a href="course.html?course=DATA1700" class="course-button">DATA1700</a>
+                            <a href="course.html?course=DATA1500" class="course-button">DATA1500</a>
+                            <a href="course.html?course=ADSE1310" class="course-button">ADSE1310</a>
+                        </div>
                     </div>
-                    <form id="topic-form">
-                        <label>
-                            <input type="checkbox" name="topics" value="core_concepts.json">
-                            Grunnleggende begreper
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="development_process.json">
-                            Utviklingsprosesser
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="uml_modeling.json">
-                            UML og modellering
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="design_testing.json">
-                            Design og testing
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="project_management.json">
-                            Prosjektledelse og teamarbeid
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="service_maintenance.json">
-                            Tjenesteorientert programvare og vedlikehold
-                        </label>
-                        <label>
-                            <input type="checkbox" name="topics" value="config_quality.json">
-                            Konfigurasjon og kvalitetsstyring
-                        </label>
-                    </form>-->
-                    <div>
-                        <button id="start-flashcards-btn" class="start-quiz-btn">Start Flashcards</button>
 
-                        <button type="button" id="start-quiz-btn" class="start-quiz-btn">Start Quiz</button>
+                    <div class="year-box">
+                        <h2 class="year-label">2. år</h2>
+                        <div class="courses">
+                            <a href="course.html?course=DAVE3606" class="course-button">DAVE3606</a>
+                            <a href="course.html?course=DATA2500" class="course-button">DATA2500</a>
+                            <a href="course.html?course=DATA2410" class="course-button">DATA2410</a>
+                            <a href="course.html?course=ADTS2310" class="course-button">ADTS2310</a>
+                        </div>
                     </div>
-            </div>
-        </section>
+                </div>
+            </section>
+        </main>
 
+        <footer>
+            <p>&copy; 2025 Kinetisk kunnskap. All rights reserved.</p>
+        </footer>
 
+        <!-- Import only the main.js script -->
+        <script type="module" src="scripts/main.js"></script>
 
-
-        <!-- Quiz Container -->
-        <section id="quiz-container" class="hidden">
-            <div id="progress">
-                Spørsmål <span id="current-question">1</span> of <span id="total-questions">3</span>
-            </div>
-            <div id="question-container">
-                <h2 id="question-title">Question Title</h2>
-            </div>
-            <div id="options" class="button-container">
-                <!-- Answer options will be dynamically injected -->
-            </div>
-            <div id="feedback" class="hidden"></div>
-            <button id="next-button" class="hidden">Neste</button>
-        </section>
-
-        <div id="flashcard-container" class="hidden">
-            <div id="flashcard" class="flashcard">
-                <div id="flashcard-front" class="flashcard-side">Question/Term</div>
-                <div id="flashcard-back" class="flashcard-side hidden">Answer/Definition</div>
-            </div>
-            <div class="flashcard-buttons">
-                <button id="prev-flashcard" class="btn">Previous</button>
-                <button id="flip-flashcard" class="btn">Flip</button>
-                <button id="next-flashcard" class="btn">Next</button>
-            </div>
-            <button id="back-to-menu" class="btn">Back to Menu</button>
-        </div>
-
-
-        <!-- End Screen Container -->
-        <section id="end-container" class="hidden">
-            <div id="end-screen" class="end-screen">
-                <h1>Quiz ferdig!</h1>
-                <p>Din score: <span id="final-score"></span> / <span id="total-questions-end"></span></p>
-                <button id="restart-quiz-btn" class="start-quiz-btn">Restart Quiz</button>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2024 DAFE2200 Quiz</p>
-    </footer>
-
-    <script src="scripts/script.js"></script>
-<!--    <script src="scripts/utils.js" type="module"></script>
-    <script src="scripts/flashcards.js" type="module"></script>
-    <script src="scripts/mcq.js" type="module"></script>
-    <script src="scripts/main.js" type="module"></script>-->
-
-</body>
+    </body>
 </html>

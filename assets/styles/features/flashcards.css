@@ -1,0 +1,96 @@
+/* ============================================
+   FLASHCARD FEATURE
+   Styles for the flashcard feature, including
+   animations, card dimensions, and front/back design.
+   ============================================ */
+
+
+
+.flashcard {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+}
+
+.flashcard {
+    position: relative;
+    width: 90%; /* Use a percentage of the container */
+    max-width: 400px; /* Cap the width for large screens */
+    height: 200px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    overflow: hidden; /* Prevent content from overflowing */
+    background-color: lightblue; /* For visibility */
+}
+
+.flashcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto; /* Center horizontally */
+}
+
+
+
+.flashcard-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fce2ff; /* Soft pink */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+#flashcard-front {
+    transform: rotateY(0deg);
+}
+
+#flashcard-back {
+    transform: rotateY(180deg);
+}
+
+.flashcard.hidden {
+    display: none;
+}
+
+.flashcard.flip #flashcard-front {
+    transform: rotateY(-180deg);
+}
+
+.flashcard.flip #flashcard-back {
+    transform: rotateY(0deg);
+}
+
+.btn {
+    display: block;
+    margin: 10px auto; /* Space between buttons and center alignment */
+    padding: 12px 0; /* Equal vertical padding for consistency */
+    width: 80%; /* Fixed width relative to the container */
+    max-width: 400px; /* Optional: Cap the width for larger screens */
+    background-color: rgba(245, 211, 220, 0.9); /* Light pink */
+    color: #333; /* Neutral text color */
+    border: 2px solid rgba(245, 115, 179, 0.6); /* Subtle pink border */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 1.1rem; /* Slightly larger text */
+    text-align: center; /* Center-align text inside buttons */
+    cursor: pointer; /* Indicate clickability */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    line-height: 1.5; /* Makes the text appear vertically balanced */
+}
+
+.btn:hover {
+    background-color: rgba(245, 115, 179, 0.8); /* A darker pink on hover */
+    color: #fff; /* White text for contrast */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
