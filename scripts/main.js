@@ -24,7 +24,6 @@ document.getElementById('start-quiz-btn').addEventListener('click', () => {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', async () => {
     await updateDOM();
 })

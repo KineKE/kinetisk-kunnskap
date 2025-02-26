@@ -23,9 +23,6 @@ export async function startFlashcards() {
     }
 }
 
-
-
-
 function showFlashcard() {
     if (flashcards.length === 0) {
         alert("No flashcards available.");
@@ -79,5 +76,5 @@ document.getElementById("start-flashcards-btn").addEventListener("click", async 
 });
 
 
-
+const test =
 

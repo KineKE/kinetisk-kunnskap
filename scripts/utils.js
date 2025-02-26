@@ -7,7 +7,6 @@ export function toggleVisibility(elementId, show) {
     }
 }
 
-
 // Parse the URL to get the course parameter
 export function getCourseFromURL() {
     const params = new URLSearchParams(window.location.search);

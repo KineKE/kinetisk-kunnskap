@@ -3,7 +3,7 @@ import { fetchCourseData, getCourseFromURL} from "./utils.js";
 export async function updateDOM(){
     const courseId = getCourseFromURL();
     console.log("Course: " + courseId);
-    const courseFetch = await fetchCourseData();
+    const courseFetch =  await fetchCourseData(); // needs 'await' to resolve the promise from fetchCourseData()
     console.log(courseFetch);
 
     const title = document.querySelector("title");
@@ -11,9 +11,7 @@ export async function updateDOM(){
 
     try {
         // Check if the courses exist in the JSON file
-        console.log("I am inside the try-block")
         if (courseFetch[courseId]) {
-            console.log("I have found the course information")
             const courseData = courseFetch[courseId];
             console.log("courseData-title: " + courseData.title);
             console.log("courseData-h1: " + courseData.h1);
@@ -22,9 +20,7 @@ export async function updateDOM(){
             title.textContent = courseData.title;
             header.textContent = courseData.h1;
 
-
         } else {
-            console.log("I am in the else-section")
             // Handle invalid course
             title.textContent = "Fag ikke funnet";
             header.textContent = "Faget eksisterer ikke"
