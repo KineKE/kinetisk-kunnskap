@@ -1,5 +1,5 @@
 // imports
-import { loadData, toggleVisibility } from './utils.js';
+import { loadData, toggleVisibility } from '../core/utils.js';
 
 
 // global variables

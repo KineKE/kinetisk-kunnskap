@@ -1,5 +1,219 @@
 /* ============================================
+   MULTIPLE-CHOICE QUESTION (MCQ) FEATURE
+   Styles for the MCQ feature, including the layout
+   of questions and answer buttons.
+   ============================================ */
+
+/* ============================================
    QUIZ FEATURE
    Shared styles for quiz-related components,
    such as progress bars and feedback messages.
    ============================================ */
+
+
+
+button.correct-highlight[disabled] {
+    background-color: rgba(198, 239, 206, 0.9); /* Soft green */
+    color: #155724; /* Dark green text */
+    border: 2px solid rgba(110, 231, 142, 0.9); /* Green border */
+}
+
+button.incorrect-highlight[disabled] {
+    background-color: rgba(243, 154, 154, 0.9); /* Soft red */
+    color: #721c24; /* Dark red text */
+    border: 2px solid rgba(252, 129, 129, 0.9); /* Red border */
+}
+
+.btn:disabled {
+    background-color: rgba(200, 200, 200, 0.7); /* Light gray background */
+    color: #666; /* Gray text */
+    border-color: #ccc; /* Light gray border */
+    cursor: not-allowed; /* Show "not-allowed" cursor */
+    pointer-events: none; /* Ensure the button is truly unclickable */
+}
+
+
+/* Quiz Section */
+
+#quiz-container {
+    position: absolute; /* Position the quiz on top of the hero */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's size */
+    max-width: 700px; /* Optional: Limit quiz container size */
+    width: 90%; /* Adjust responsiveness */
+    background-color: rgba(255, 228, 235, 0.9); /* Soft pink with slight transparency */
+    padding: 30px; /* Add internal spacing */
+    border-radius: 16px; /* Round the corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add some depth */
+    z-index: 10; /* Ensure it’s above other elements */
+    text-align: center; /* Center-align the content */
+    margin: auto; /* Center horizontally */
+}
+
+
+
+#progress {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #666; /* Subtle gray color */
+}
+
+#feedback {
+    margin: 20px auto 0 auto; /* Space above and center align */
+    padding: 10px 20px; /* Add some padding */
+    font-size: 1.2rem; /* Larger font for visibility */
+    font-weight: bold; /* Emphasize the text */
+    text-align: center;
+    border-radius: 12px; /* Rounded corners */
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 80%; /* Consistent width */
+    max-width: 400px; /* Ensure it doesn’t get too large */
+}
+
+
+#feedback.correct {
+    background-color: #e2e3e5; /* Light gray */
+    color: #383d41; /* Dark gray */
+    border: 2px solid #d6d8db; /* Subtle border */
+}
+
+#feedback.wrong {
+    background-color: #e2e3e5; /* Light gray */
+    color: #383d41; /* Dark gray */
+    border: 2px solid #d6d8db; /* Subtle border */
+}
+
+#feedback.show {
+    opacity: 1;
+    animation: fadeInSlide 0.5s ease-out; /* Apply the animation */
+
+}
+
+
+#question-container {
+    background-color: rgba(33, 30, 31, 0.9); /* Very light pink */
+    padding: 20px;
+    margin-bottom: 20px; /* Spacing below */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#progress {
+    background-color: rgba(240, 230, 240, 0.9); /* Light lavender */
+    padding: 10px;
+    margin-bottom: 20px; /* Spacing below */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333; /* Neutral text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center-align the buttons */
+    gap: 1px; /* Add equal spacing between buttons */
+}
+
+#next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2e7a73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#next-button.hidden {
+    display: none;
+}
+
+
+
+#question-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+#topics-container {
+    z-index: 5; /* Higher priority than the background */
+    display: block; /* Ensure it’s not hidden */
+    margin-top: 20px;
+}
+
+
+#topics-container {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    max-width: 600px;
+    background-color: rgba(255, 240, 245, 0.9); /* Pale pink to match theme */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 3; /* Prioritize over background */
+}
+
+
+
+#topic-form {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: rgba(255, 228, 235, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#topic-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#topic-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+
+
+#topic-form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem; /* Slightly larger text */
+    color: #333; /* Neutral text color */
+    cursor: pointer; /* Indicate that the label is clickable */
+}
+
+#topic-form input[type="checkbox"] {
+    width: 24px; /* Larger checkbox */
+    height: 24px; /* Larger checkbox */
+    margin-right: 15px; /* Space between checkbox and label text */
+    cursor: pointer; /* Indicate clickability */
+}
+
+
+.topics-header {
+    background-color: rgba(52, 35, 41, 0.9); /* Dark background */
+    font-size: 0.8rem;
+    color: white; /* Ensure text is readable */
+    padding: 20px; /* Add some padding around the text */
+    border-radius: 12px; /* Rounded corners for smooth design */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Optional: Add a subtle shadow */
+    margin-bottom: 20px; /* Space below the header */
+}

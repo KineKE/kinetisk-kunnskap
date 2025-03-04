@@ -1,6 +1,6 @@
 
 
-export class QuizManager{
+export class QuizModel {
 
     constructor() {
         this.score = 0; // the score for the quiz
@@ -38,7 +38,7 @@ export class QuizManager{
      * Gets the current question object.
      * @returns {Object} The current question
      */
-    getCurrentQuestions() {
+    getCurrentQuestion() {
         return this.questions[this.currentQuestionIndex];
     }
 
@@ -51,7 +51,7 @@ export class QuizManager{
      * @returns {boolean} True if correct, false otherwise
      */
     checkAnswer(selectedOptionIndex) {
-        const currentQuestion = this.getCurrentQuestions();
+        const currentQuestion = this.getCurrentQuestion();
         const isCorrect = selectedOptionIndex === currentQuestion.answer;
 
         if (isCorrect) {
@@ -72,6 +72,8 @@ export class QuizManager{
         this.currentQuestionIndex++;
         return this.currentQuestionIndex < this.questions.length;
     }
+
+
 
     /**
      * Checks if the quiz is finished.

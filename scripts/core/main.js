@@ -1,6 +1,19 @@
-import { fetchCourseData, getCourseFromURL} from "./utils.js";
+/*
+This module will handle starting events, such as the quiz or the flashcards.
+Will also handle toggling elements on a large scale
+ */
 
-export async function updateDOM(){
+
+// ============== IMPORT STATEMENTS ===============
+
+// Import statements
+import { startQuiz } from "../quiz/quizController.js";
+import { toggleVisibility, fetchCourseData, getCourseFromURL } from "./utils.js";
+
+
+// ============== UPDATE DOM =================
+
+async function updateDOM(){
     const courseId = getCourseFromURL();
     console.log("Course: " + courseId);
     const courseFetch =  await fetchCourseData(); // needs 'await' to resolve the promise from fetchCourseData()
@@ -32,3 +45,23 @@ export async function updateDOM(){
         console.error("Feil med å fetche JSON:", error);
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await updateDOM();
+});
+
+// ================= STARTING MCQ ================
+
+document.getElementById('start-quiz-btn').addEventListener('click', () => {
+    const heroContainer = document.getElementById('hero-container');
+    const quizContainer = document.getElementById('quiz-container');
+
+    // Switch UI: hide hero, show quiz container
+    toggleVisibility(heroContainer, false);
+    toggleVisibility(quizContainer, true);
+
+    // Start the quiz with course content
+    startQuiz();
+});
+
