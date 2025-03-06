@@ -9,29 +9,19 @@ TOC
 
 
 
-
-
 // =========== IMPORTS, VARIABLES ETC ============
 
 // Import statements
 import { QuizModel } from "./QuizModel.js";
-import {} from "./quizView";
+//import {} from "./quizView";
 
 import { toggleVisibility } from "../core/utils.js";
 
 
-// Creating an instance of the quizManager class
-const quizManager = new QuizModel();
+// Creating an instance of the quizModel class
+const quizModel = new QuizModel();
 
-// Gathering DOM elements
-const quizContainer = document.getElementById('quiz-container');
-const feedback = document.getElementById('feedback');
-const nextButton = document.getElementById('next-button');
-const endContainer = document.getElementById('end-container');
-const questionTitle = document.getElementById('question-title');
-const optionsContainer = document.getElementById('options');
-const questionContainer = document.getElementById('question-container');
-const restartButton = document.getElementById("restart-quiz-btn");
+
 
 
 // =================== START QUIZ =====================
@@ -40,7 +30,7 @@ export function startQuiz() {
 
     console.log("Starting quiz....")
 
-    quizManager.loadQuestions([
+    quizModel.loadQuestions([
             {
                 "question": "Config 1",
                 "options": [
@@ -57,18 +47,20 @@ export function startQuiz() {
                     "If you say so",
                     "Gotcha",
                     "Excellent"],
-                "answer": 2
+                "answer": 1
             }
         ]
     )
 
     console.log("Questions have loaded...");
-    console.log(quizManager.questions);
+    console.log(quizModel.questions);
 
     console.log("Trying to reset the quiz..");
-    quizManager.reset();
+    quizModel.reset();
     console.log("Quiz resat!");
     console.log("Trying to show the first question..")
+
+    // some version of displaying the first question
     showQuestion();
 }
 
@@ -77,36 +69,14 @@ export function startQuiz() {
 // Question Display
 // =========================
 
-function showQuestion() {
 
-    console.log("I am inside of showQuestion...");
-
-    const currentQuestion = quizManager.getCurrentQuestion();
-
-    console.log("I have fetched the first question...it is..");
-    console.log(currentQuestion);
-    document.getElementById("question-title").textContent = quizManager.questions[quizManager.currentQuestionIndex].question;
-    document.getElementById("current-question").textContent = quizManager.currentQuestionIndex + 1;
-    document.getElementById("total-questions").textContent = quizManager.questions.length;
-
-    const optionsContainer = document.getElementById("options");
-    optionsContainer.innerHTML = "";
-
-    currentQuestion.options.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.classList.add("btn");
-        button.addEventListener("click", () => checkAnswer(index));
-        optionsContainer.appendChild(button);
-    });
-}
 
 // =========================
 // Answer Checking
 // =========================
 
 function checkAnswer(selectedOptionIndex) {
-    const currentQuestion = quizManager.questions[quizManager.currentQuestionIndex];
+    const currentQuestion = quizModel.questions[quizModel.currentQuestionIndex];
 
     // Remove previous feedback classes
     feedback.classList.remove("correct", "wrong");
@@ -188,8 +158,8 @@ document.getElementById("next-button").addEventListener("click", () => {
     });
 
     // Move to the next question
-    quizManager.currentQuestionIndex++;
-    if (quizManager.currentQuestionIndex < quizManager.questions.length) {
+    quizModel.currentQuestionIndex++;
+    if (quizModel.currentQuestionIndex < quizModel.questions.length) {
         showQuestion();
     } else {
         endQuiz();
@@ -229,8 +199,8 @@ function endQuiz() {
     toggleVisibility(endContainer, true);
 
     // Update the score
-    document.getElementById("final-score").textContent = quizManager.score;
-    document.getElementById("total-questions-end").textContent = quizManager.questions.length;
+    document.getElementById("final-score").textContent = quizModel.score;
+    document.getElementById("total-questions-end").textContent = quizModel.questions.length;
 
 
     // Add event listener to restart the quiz

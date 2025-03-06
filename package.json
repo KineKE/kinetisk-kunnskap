@@ -1,0 +1,25 @@
+{
+  "name": "kinetisk-kunnskap",
+  "version": "1.0.0",
+  "description": "Denne quizen er laget som eksamenshjelp for meg selv til eksamen i DAFE2200. Alle som kommer over denne quizzen er velkomne til å bruke den selv, men vær obs på at eventuelle feil kan forekomme - dobbeltsjekk alltid med pensum! 📚",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "test:once": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KineKE/dafe2200-mcq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KineKE/dafe2200-mcq/issues"
+  },
+  "homepage": "https://github.com/KineKE/dafe2200-mcq#readme"
+}

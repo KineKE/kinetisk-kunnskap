@@ -25,3 +25,28 @@ replay_pid*
 
 .idea/
 .DS_Store
+
+# 🚀 Node.js Dependencies (Auto-generated)
+node_modules/
+
+# 🔧 IDE & Editor Files
+.idea/               # IntelliJ/JetBrains
+.vscode/             # VS Code settings
+.DS_Store            # macOS Finder metadata
+*.log                # Log files
+
+# ⚡ Jest Test Cache & Coverage
+coverage/
+jest/
+*.test-results.json
+
+# 🛠 Build & Temporary Files
+dist/
+tmp/
+.cache/
+
+# 🗂 Ignore compiled TypeScript (if using TypeScript)
+*.tsbuildinfo
+
+# 📦 Ignore npm debug logs
+npm-debug.log*

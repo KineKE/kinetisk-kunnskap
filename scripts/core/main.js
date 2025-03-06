@@ -1,45 +1,48 @@
-/*
-This module will handle starting events, such as the quiz or the flashcards.
-Will also handle toggling elements on a large scale
- */
 
 
-// ============== IMPORT STATEMENTS ===============
 
-// Import statements
+// ============== IMPORTS AND VARIABLES ===============
+
 import { startQuiz } from "../quiz/quizController.js";
-import { toggleVisibility, fetchCourseData, getCourseFromURL } from "./utils.js";
+import { toggleVisibility, fetchCourseData, getCourseIdFromURL } from "./utils.js";
+
+
+// ============== DOM ELEMENT SELECTION ==============
+
+    const DOMElements= {
+        title: document.querySelector("title"),
+        header: document.querySelector("h1"),
+        heroContainer: document.getElementById('hero-container'),
+        quizContainer: document.getElementById('quiz-container'),
+        startQuizBtn: document.getElementById('start-quiz-btn'),
+    };
 
 
 // ============== UPDATE DOM =================
 
 async function updateDOM(){
-    const courseId = getCourseFromURL();
-    console.log("Course: " + courseId);
-    const courseFetch =  await fetchCourseData(); // needs 'await' to resolve the promise from fetchCourseData()
-    console.log(courseFetch);
 
-    const title = document.querySelector("title");
-    const header = document.querySelector("h1");
+    // setting DOM elements
+    const { title, header } = DOMElements;
+    const courseId = getCourseIdFromURL();
+
+    if (!courseId) {
+        console.error("No course ID found in URL.");
+        return;
+    }
 
     try {
-        // Check if the courses exist in the JSON file
-        if (courseFetch[courseId]) {
-            const courseData = courseFetch[courseId];
-            console.log("courseData-title: " + courseData.title);
-            console.log("courseData-h1: " + courseData.h1);
+        const courseData = await fetchCourseData(courseId);
 
-            // Update the page with course data
+        // Check if the courses exist in the JSON file
+        if (courseData) {
             title.textContent = courseData.title;
             header.textContent = courseData.h1;
-
         } else {
-            // Handle invalid course
             title.textContent = "Fag ikke funnet";
             header.textContent = "Faget eksisterer ikke"
         }
     } catch (error) {
-        // Handle fetch or JSON errors
         title.textContent = "Problemer med å laste inn tittel";
         header.textContent = "Problemer med å laste inn emneinfo";
         console.error("Feil med å fetche JSON:", error);
@@ -47,15 +50,11 @@ async function updateDOM(){
 }
 
 
-document.addEventListener('DOMContentLoaded', async () => {
-    await updateDOM();
-});
+// ================= STARTING QUIZ ================
 
-// ================= STARTING MCQ ================
+function initiateQuiz() {
 
-document.getElementById('start-quiz-btn').addEventListener('click', () => {
-    const heroContainer = document.getElementById('hero-container');
-    const quizContainer = document.getElementById('quiz-container');
+    const { heroContainer, quizContainer } = DOMElements;
 
     // Switch UI: hide hero, show quiz container
     toggleVisibility(heroContainer, false);
@@ -63,5 +62,15 @@ document.getElementById('start-quiz-btn').addEventListener('click', () => {
 
     // Start the quiz with course content
     startQuiz();
+}
+
+
+// ================= EVENT LISTENERS ================
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await updateDOM();
 });
+document.getElementById('start-quiz-btn').addEventListener('click', initiateQuiz);
+
+
 

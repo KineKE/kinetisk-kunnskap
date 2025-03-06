@@ -76,5 +76,3 @@ document.getElementById("start-flashcards-btn").addEventListener("click", async 
 });
 
 
-const test =
-
